@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'bebas_neuebold';
-  src: url('./fonts/bebasneue_bold-webfont.woff2') format('woff2'),
-       url('./fonts/bebasneue_bold-webfont.woff') format('woff');
+  src: url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+       url('../fonts/bebasneue_bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -11,8 +11,8 @@
 
 @font-face {
   font-family: 'bebas_neuelight';
-  src: url('./fonts/bebasneue_light-webfont.woff2') format('woff2'),
-       url('./fonts/bebasneue_light-webfont.woff') format('woff');
+  src: url('../fonts/bebasneue_light-webfont.woff2') format('woff2'),
+       url('../fonts/bebasneue_light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: 'bebas_neue_regularregular';
-  src: url('./fonts/bebasneue_regular-webfont.woff2') format('woff2'),
-       url('./fonts/bebasneue_regular-webfont.woff') format('woff');
+  src: url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+       url('../fonts/bebasneue_regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -29,12 +29,17 @@
 
 @font-face {
   font-family: 'bebas_neuethin';
-  src: url('./fonts/bebasneue_thin-webfont.woff2') format('woff2'),
-       url('./fonts/bebasneue_thin-webfont.woff') format('woff');
+  src: url('../fonts/bebasneue_thin-webfont.woff2') format('woff2'),
+       url('../fonts/bebasneue_thin-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
 }
+
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -46,7 +51,7 @@ body {
   margin: 0 auto;
 }
 
-.content {
+.info {
   /*font-family: "Bebas Neue";*/
   font-size: 1.6rem;
   width: 100%;
@@ -54,14 +59,13 @@ body {
   text-align: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 30%;
+  margin-top: 80px;
 
   @media (max-width: 400px) {
-    margin-top: 20%;
+    margin-top: 80px;
   }
 
-  .content__header {
+  header {
     font-family: 'bebas_neue_regularregular';
     opacity: 0.8;
     font-weight: normal;
@@ -69,14 +73,14 @@ body {
     font-size: 3rem;
   }
 
-  .content__text p {
+  div p {
     font-family: 'bebas_neuelight';
     margin-top: 0;
     font-weight: lighter;
     font-size: 4rem;
   }
 
-  .content__email {
+  div a {
     font-family: 'bebas_neuebold';
     color: black;
     opacity: 0.7;
@@ -85,5 +89,56 @@ body {
     &:hover {
       opacity: 0.5;
     }
+  }
+}
+
+.discog {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+    img {
+      width: 60%;
+
+      @media (max-width:600px) {
+        width: 80%;
+      }
+
+    }
+    .album-info {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-family: "Barlow";
+      font-size: 1.8rem;
+      // letter-spacing: 6px;
+
+      @media (max-width: 400px) {
+        // letter-spacing: 1px;
+        width: 80%;
+      }
+
+      a {
+        color: black;
+        
+        &:hover {
+          color: grey;
+        }
+      }
+      
+      .credit {
+        font-style: italic;
+        // margin-top: -5px;
+      }
+    }
+
   }
 }
